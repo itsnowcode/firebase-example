@@ -4,10 +4,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
+  const isEmulator = bool.fromEnvironment('IS_EMULATOR');
+  print('start(isEmulator: $isEmulator)');
+
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
-  bool isEmulator = true;
 
   if (isEmulator) {
     String host = defaultTargetPlatform == TargetPlatform.android
@@ -88,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text("Loading");
+          return Text("Loading", key: const Key('loading1'));
         }
 
         final data = snapshot.data.data();
