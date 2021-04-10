@@ -20,29 +20,19 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Launch Firebase emulator
 ```
-> cd firebase
+> git clone https://github.com/itsnowcode/firebase-example.git
+> cd firebase-example/firebase
 > firebase emulators:start
 ```
 
-### for Android emulator
-- Launch the Android emulator
-  - Launch from Android Studio
-    1. Click menu [Tools -> AVD Manager]
-    1. Click any ‚ŒLaunch emulator action icon
-  - Launch from Shell
-
-ex) for windows on Command Prompt
+### Run application
 ```
-> cd C:\Users\{UserName}\AppData\Local\Android\sdk\emulator
-> emulator -list-avds
-Pixel_3_API_28
-> emulator @Pixel_3_API_28
+> cd firebase-example/firestore_emulator
+> flutter run -d chrome --dart-define=IS_EMULATOR=true
 ```
 
-- Run application
-```
-> git clone https://github.com/itsnowcode/firebase-example.git
-> cd firebase-example
-> cd firestore_emulator
-> flutter run
-```
+## Notes
+Check the operation of the Firebase emulator for Firestore.
+- It works on the web.
+- It doesn't work on the Android emulator.
+- Haven't tried it on the iOS emulator.
