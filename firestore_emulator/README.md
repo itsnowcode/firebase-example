@@ -25,6 +25,10 @@ samples, guidance on mobile development, and a full API reference.
 > firebase emulators:start
 ```
 
+### Modify settings
+- (for web) Modify firebaseConfig in web/index.html to real settings.
+- (for Android, but doesn't work) Modify firebaseConfig in android/app/google-services.json to real settings.
+
 ### Run application
 ```
 > cd firebase-example/firestore_emulator
