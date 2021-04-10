@@ -35,6 +35,8 @@ samples, guidance on mobile development, and a full API reference.
 > flutter run -d chrome --dart-define=IS_EMULATOR=true
 ```
 
+![counter app for firestore emulator](https://raw.githubusercontent.com/itsnowcode/firebase-example/images/firestore_emulator/img/firestore_emulator.jpg)
+
 ## Notes
 Check the operation of the Firebase emulator for Firestore.
 - It works on the web.
