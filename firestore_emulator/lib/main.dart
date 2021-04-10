@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text("Loading");
+          return Text("Loading", key: const Key('loading1'));
         }
 
         final data = snapshot.data.data();

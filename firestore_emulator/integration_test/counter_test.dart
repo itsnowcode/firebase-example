@@ -12,12 +12,20 @@ void main() {
     // First, define the Finders and use them to locate widgets from the
     // test suite. Note: the Strings provided to the `byValueKey` method must
     // be the same as the Strings we used for the Keys in step 1.
+    final loading1 = find.byKey(const Key('loading1'));
     final Finder fab = find.byKey(Key('fab'));
     final Finder counter = find.byKey(Key('counter'));
 
     testWidgets('starts at 0', (WidgetTester tester) async {
       app.main();
       await tester.pumpAndSettle();
+
+      expect(widget<Text>(tester, loading1).data, 'Loading');
+      await tester.pumpAndSettle();
+
+      while (findsNothing.matches(counter, {})) {
+        await tester.pumpAndSettle();
+      }
 
       // Use the `driver.getText` method to verify the counter starts at 0.
       expect(widget<Text>(tester, counter).data, "0");
@@ -28,6 +36,13 @@ void main() {
     testWidgets('increments the counter', (WidgetTester tester) async {
       app.main();
       await tester.pumpAndSettle();
+
+      expect(widget<Text>(tester, loading1).data, 'Loading');
+      await tester.pumpAndSettle();
+
+      while (findsNothing.matches(counter, {})) {
+        await tester.pumpAndSettle();
+      }
 
       // First, tap the button.
       await tester.tap(fab);

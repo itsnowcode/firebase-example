@@ -31,11 +31,25 @@
 </head>
 <body>
   <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
+
+       <script>
+        const firebaseConfig = {
+          apiKey: "ZZzzZzZ99zzLZzZ9Z99z99zZzZZzZzZZz9zO9zz",
+          authDomain: "firestore_emulator.test.com",
+          databaseURL: "https://firestore_emulator.test.com",
+          projectId: "firestore_emulator",
+          storageBucket: "firestore_emulator.test.com",
+          messagingSenderId: "999999999999",
+          appId: "9:999999999999:web:z999999zz99999zz99zzz9",
+        };
+        firebase.initializeApp(firebaseConfig);
+      </script>
+
+<script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('flutter-first-frame', function () {
         navigator.serviceWorker.register('flutter_service_worker.js');
