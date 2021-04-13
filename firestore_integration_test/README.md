@@ -38,3 +38,5 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Known issues
 - In index.html, Firebase or Firestore JavaScript library version is 8.0.0 and above then an error occurs.
+- It succeeds when run in Flutter Web. But failed when run in Android Emulator.
+- Not implemented in iOS emulator.
